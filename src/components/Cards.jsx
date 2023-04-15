@@ -1,5 +1,4 @@
-import React from 'react';
-import Card from './Card';
+import Card from './Card.jsx';
 import image1 from './../assets/image1.jpg';
 import image2 from './../assets/image2.jpg';
 import image3 from './../assets/image3.jpg';
@@ -29,20 +28,13 @@ function Cards() {
 
 	return(
 
-		<section className="container h-100 d-flex justify-content-center align-items-center">
-			<div className="row">
-
+		<section className="container-fluid min-vh-100 py-4 d-flex justify-content-center align-items-center gap-5 flex-wrap">
         {
-          cards.map(card => (
-            <div className="col-md-4" key={card.id}>
-              <Card image={card.image} title={card.title} url={card.url}/>
-            </div>
-          ))
+          cards.map((card) => <Card key={card.title} image={card.image} title={card.title} url={card.url}/>)
         }
-
-			</div>
 		</section>	
+
 	);
-}
+};
 
 export default Cards;
